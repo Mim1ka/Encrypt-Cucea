@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="card"> 
+  <h2>Programa de encriptacion de cucea</h2> <!--Nombre-->
+  <div class="content-select"> <!--Generas un for con la lista de opciones -->
+  <select name="miselect"  [(ngModel)]="seleccionado">
+    <option  [value]="item" *ngFor="let item of lista" [selected]="item == 'Cesar encrypt'">{{item}}</option>
+  </select>
+
+  </div>
+  <div class="Container-input"> <!--Colocamos el texto que se va a encriptar y dependiendo de la opcion
+                                    añadimos desplazamientos o clave-->
+    <mat-form-field >
+      <input matInput [(ngModel)]="textoAEncriptar" type="text" placeholder="Texto a encriptar">
+    </mat-form-field>
+&nbsp;
+    <mat-form-field *ngIf="seleccionado=='Cesar decrypt' ||seleccionado=='Cesar encrypt'">
+      <input matInput [(ngModel)]="desplazamientos" type="number" placeholder="Desplazamientos">
+    </mat-form-field>
+    <mat-form-field *ngIf="seleccionado=='Vigeneres encrypt' ||seleccionado=='Vigeneres decrypt'">
+      <input matInput [(ngModel)]="claveVigeneres" type="text" placeholder="Clave">
+    </mat-form-field>
+  </div>
+  <div class="Container-button"> <!--Realiza la opcion que se escogio al comienzo ya sea decrypt o encrypt-->
+    <button mat-raised-button (click)="ButtonAction()"  > <p>Encriptar</p> </button>
+  </div>
+  <div *ngIf="this.mostrar"
+    class ="Container-resultado"> <!--Muestra el resultado del texto encriptado  y ademas el texto a encriptar-->
+    <p>texto plano: {{textoAEncriptar}}</p>
+    <p>Texto encriptado: {{textoEncriptado}}</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+:root {
+  font-size: 20px;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+p {
+  margin: 0;
+}
+
+p:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+body {
+  font: 1em/1.618 Inter, sans-serif;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  padding: 30px;
+
+  color: #224;
+  background:
+    url(https://png.pngtree.com/thumb_back/fh260/background/20210828/pngtree-digital-code-encryption-dark-blue-technology-background-image_770047.jpg)
+    center / cover no-repeat fixed;
+}
+
+.card {
+  min-width: 200px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(15px);
+  h2 {
+    margin-top: -20px;
+    text-align: center;
+
+  }
+}
+
+.card-footer {
+  font-size: 0.65em;
+  color: #446;
+}
+
+.content-input input,
+.content-select select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.content-select select::-ms-expand {
+  display: none;
+}
+
+.content-select{
+  max-width: 400px;
+  position: relative;
+  margin: 0 auto;
+
+}
+
+.content-select select{
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 7px 10px;
+  height: 42px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #7b7b7b;
+  font-size: 2em;
+  color: #999;
+  font-family:
+    'Quicksand', sans-serif;
+  border:2px solid rgba(0,0,0,0.2);
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.content-select select:hover{
+  background: #B1E8CD;
+}
+
+.content-select i{
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 13px);
+  width: 16px;
+  height: 16px;
+  display: block;
+  border-left:4px solid #2AC176;
+  border-bottom:4px solid #2AC176;
+  transform: rotate(-45deg); /* Giramos el cuadrado */
+  transition: all 0.25s ease;
+}
+
+.content-select:hover i{
+  margin-top: 3px;
+}
+.Container-input{
+  margin: 40px auto;
+  padding: 20px;
+  input{
+    margin-left: 20px;
+  }
+}
+
+.Container-button{
+  margin: -20px auto;
+  p{
+    font-size: 30px;
+  }
+}
+.Container-resultado{
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 2rem;
+  p{
+    margin: 0 0;
+  }
+}
